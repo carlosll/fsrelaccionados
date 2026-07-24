@@ -243,6 +243,7 @@
 .fsaccesorios-item__info {
   flex: 1;
   min-width: 0;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 0.2rem;
@@ -276,13 +277,11 @@
   font-size: 0.9375rem;
   font-weight: 700;
   color: var(--fsa-text-price);
-  white-space: nowrap;
 }
 
 .fsaccesorios-item__ref {
   font-size: 0.6875rem;
   color: var(--fsa-text-secondary);
-  white-space: nowrap;
 }
 
 /* ============================================
