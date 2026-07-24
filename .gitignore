@@ -1,0 +1,35 @@
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# IDE / Editor
+.idea/
+.vscode/
+*.sublime-*
+*.swp
+*.swo
+*~
+
+# Archives (generated on release)
+*.zip
+*.tar.gz
+
+# OS generated files
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# PrestaShop specifics
+var/cache/
+var/logs/
+config/settings.inc.php
+config/xml/
+
+# Dependencies
+vendor/
+node_modules/
+
+# Build artifacts
+/build/
