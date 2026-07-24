@@ -77,8 +77,7 @@
         </div>
       </div>
 
-      {* --- Quantity (only in main row when NO combinations) --- *}
-      {if !$accessory.has_combinations}
+      {* --- Quantity (always in main row) --- *}
       <div class="fsaccesorios-item__qty">
         <button type="button"
                 class="fsaccesorios-qty-btn fsaccesorios-qty-btn--minus"
@@ -108,9 +107,8 @@
           </svg>
         </button>
       </div>
-      {/if}
 
-      {* --- Combination + quantity row (when combinations exist) --- *}
+      {* --- Combination selector row (when combinations exist) --- *}
       {if $accessory.has_combinations}
       <div class="fsaccesorios-item__combination">
         <select class="fsaccesorios-combination-select"
@@ -129,36 +127,6 @@
             </option>
           {/foreach}
         </select>
-
-        <div class="fsaccesorios-item__qty fsaccesorios-item__qty--combo">
-          <button type="button"
-                  class="fsaccesorios-qty-btn fsaccesorios-qty-btn--minus"
-                  aria-label="{l s='Decrease quantity' mod='fsaccesorios'}"
-                  {if !$accessory.available}disabled{/if}>
-            <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
-              <rect x="0" y="4" width="10" height="2" fill="currentColor"/>
-            </svg>
-          </button>
-          <input type="number"
-                 class="fsaccesorios-qty-input"
-                 id="fsaccesorios-qty-{$accessory.id_product}"
-                 value="{$accessory.minimal_quantity}"
-                 min="{$accessory.minimal_quantity}"
-                 max="{if $accessory.available}{$accessory.quantity_available}{else}0{/if}"
-                 step="1"
-                 data-product-id="{$accessory.id_product}"
-                 aria-label="{l s='Quantity for' mod='fsaccesorios'} {$accessory.name|escape:'html':'UTF-8'}"
-                 {if !$accessory.available}disabled{/if} />
-          <button type="button"
-                  class="fsaccesorios-qty-btn fsaccesorios-qty-btn--plus"
-                  aria-label="{l s='Increase quantity' mod='fsaccesorios'}"
-                  {if !$accessory.available}disabled{/if}>
-            <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
-              <rect x="4" y="0" width="2" height="10" fill="currentColor"/>
-              <rect x="0" y="4" width="10" height="2" fill="currentColor"/>
-            </svg>
-          </button>
-        </div>
       </div>
       {/if}
 
