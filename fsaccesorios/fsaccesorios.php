@@ -20,7 +20,7 @@ class Fsaccesorios extends Module
     {
         $this->name = 'fsaccesorios';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.5';
+        $this->version = '1.0.6';
         $this->author = 'FS';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = [
@@ -177,15 +177,25 @@ class Fsaccesorios extends Module
     }
 
     /**
-     * Fallback: load assets via displayHeader for older themes.
+     * Fallback: load JS directly. Some performance modules (jprestaspeedpack)
+     * may strip assets registered via actionFrontControllerSetMedia.
+     * A direct script tag bypasses the asset pipeline.
      *
-     * @return string Empty string (assets registered inline)
+     * @return string Script tag or empty
      */
     public function hookDisplayHeader()
     {
-        // The preferred method is actionFrontControllerSetMedia.
-        // This hook is registered as a fallback.
-        // Assets are loaded in hookActionFrontControllerSetMedia.
-        return '';
+        $controller = $this->context->controller;
+
+        if (!$controller instanceof ProductController
+            && !($controller instanceof Module
+                && $controller->name === 'quickview')
+        ) {
+            return '';
+        }
+
+        return '<script src="'
+            . $this->_path . 'views/js/accessories.js?v=' . $this->version
+            . '"></script>';
     }
 }

@@ -6,6 +6,16 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.6] — 2026-07-24
+
+### Corregido
+- **JS no cargaba:** `jprestaspeedpack` bloqueaba `registerJavascript`. Ahora se carga vía `<script>` directo en `hookDisplayHeader`.
+- **Add-to-cart funcional** con accesorios seleccionados.
+
+### Mejorado
+- **Precio** más grande y en negrita (0.94rem, 700).
+- **Diseño general** con borde azul, icono en título, sin stock bloqueante, sin mensajes duplicados.
+
 ## [1.0.5] — 2026-07-24
 
 ### Mejorado

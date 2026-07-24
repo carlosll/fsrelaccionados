@@ -273,8 +273,8 @@
 }
 
 .fsaccesorios-item__price {
-  font-size: 0.8125rem;
-  font-weight: 600;
+  font-size: 0.9375rem;
+  font-weight: 700;
   color: var(--fsa-text-price);
   white-space: nowrap;
 }
