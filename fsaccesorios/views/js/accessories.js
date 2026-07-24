@@ -78,44 +78,42 @@
     },
 
     /**
-     * Intercept the add-to-cart form submission.
+     * Intercept ALL form submissions on the product page.
      *
      * Panda's sticky button calls form.submit() programmatically, which
-     * does NOT fire the 'submit' event (JS quirk). We monkey-patch the
-     * form's submit() method to catch ALL submission paths.
+     * does NOT fire the 'submit' event. Monkey-patching the prototype
+     * catches every form.submit() call, regardless of which button or
+     * module triggers it.
      */
     _bindAddToCart: function () {
       var self = this;
-      var form = this.addToCartBtn.closest('form');
+      var nativeSubmit = HTMLFormElement.prototype.submit;
 
-      if (!form) {
-        form = document.getElementById('add-to-cart-or-refresh');
-      }
+      HTMLFormElement.prototype.submit = function () {
+        // Only intercept the add-to-cart form (has id_product input)
+        var idProductInput = this.querySelector('input[name="id_product"]');
 
-      if (!form) { return; }
+        if (!idProductInput) {
+          // Not the add-to-cart form: use native submit
+          return nativeSubmit.call(this);
+        }
 
-      // Store reference to the native submit method
-      var nativeSubmit = form.submit.bind(form);
-
-      // Replace with our wrapper
-      form.submit = function () {
         if (self.isProcessing) { return; }
 
         var accessories = self._getSelectedAccessories();
 
         // No accessories: use native submit
         if (accessories.length === 0) {
-          nativeSubmit();
-          return;
+          return nativeSubmit.call(this);
         }
 
         // Accessories selected: our AJAX flow
-        var mainProductId = self._getMainProductId();
-        var mainQuantity = self._getMainQuantity();
+        var mainProductId = parseInt(idProductInput.value, 10);
+        var qtyInput = this.querySelector('input[name="qty"]');
+        var mainQuantity = qtyInput ? parseInt(qtyInput.value, 10) : 1;
 
         if (mainProductId <= 0) {
-          nativeSubmit();
-          return;
+          return nativeSubmit.call(this);
         }
 
         self._executeAddToCart(mainProductId, mainQuantity, accessories);

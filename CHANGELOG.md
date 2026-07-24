@@ -6,6 +6,13 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.9] — 2026-07-24
+
+### Corregido
+- **Add-to-cart definitivo:** monkey-patch de `HTMLFormElement.prototype.submit` a nivel global. Intercepta cualquier llamada a `.submit()` en cualquier formulario con `id_product`. Imposible de esquivar por Panda, sticky button o cualquier otro módulo.
+- **Validación de stock eliminada** también de `validateAccessories()` (el controlador AJAX).
+- **Nombre de producto defensivo:** maneja tanto arrays multilang como strings en `$product->name`.
+
 ## [1.0.8] — 2026-07-24
 
 ### Corregido

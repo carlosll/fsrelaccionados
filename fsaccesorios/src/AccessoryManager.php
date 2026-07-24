@@ -258,7 +258,7 @@ class AccessoryManager
             if (!Validate::isLoadedObject($product) || !$product->active) {
                 $errors[] = sprintf(
                     'Product "%s" (ID: %d) is not available',
-                    $product->name[$this->idLang] ?? 'Unknown',
+                    (is_array($product->name) ? ($product->name[$this->idLang] ?? reset($product->name)) : ($product->name ?: 'Product #' . $idProduct)),
                     $idProduct
                 );
                 continue;
@@ -268,7 +268,7 @@ class AccessoryManager
             if (!$this->isAccessoryOf($idProduct, $mainProductId)) {
                 $errors[] = sprintf(
                     'Product "%s" is not an accessory of this product',
-                    $product->name[$this->idLang] ?? 'Unknown'
+                    (is_array($product->name) ? ($product->name[$this->idLang] ?? reset($product->name)) : ($product->name ?: 'Product #' . $idProduct))
                 );
                 continue;
             }
@@ -280,29 +280,18 @@ class AccessoryManager
             }
 
             if ($qty < $minimalQty) {
+                $productName = is_array($product->name)
+                    ? ($product->name[$this->idLang] ?? reset($product->name))
+                    : $product->name;
                 $errors[] = sprintf(
                     'Minimum quantity for "%s" is %d',
-                    $product->name[$this->idLang] ?? 'Unknown',
+                    $productName ?: 'Product #' . $idProduct,
                     $minimalQty
                 );
                 continue;
             }
 
-            // Validate stock
-            $available = StockAvailable::getQuantityAvailableByProduct(
-                $idProduct,
-                $idAttr,
-                $this->idShop
-            );
-
-            if ($available < $qty) {
-                $errors[] = sprintf(
-                    'Insufficient stock for "%s". Available: %d, requested: %d',
-                    $product->name[$this->idLang] ?? 'Unknown',
-                    $available,
-                    $qty
-                );
-            }
+            // Stock: not managed in this store — skip validation
         }
 
         return [
