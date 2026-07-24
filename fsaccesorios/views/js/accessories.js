@@ -204,7 +204,8 @@
           if (!btn.dataset.fsaOriginal) {
             btn.dataset.fsaOriginal = btn.innerHTML;
           }
-          btn.innerHTML = '<span class="fsaccesorios-spinner" aria-hidden="true"></span> Añadiendo...';
+          btn.innerHTML = '<span class="fsaccesorios-spinner" aria-hidden="true"></span> '
+            + (window.fsaccesorios_i18n && window.fsaccesorios_i18n.adding || 'Adding...');
         } else {
           btn.disabled = false;
           if (btn.dataset.fsaOriginal) {
@@ -220,7 +221,8 @@
         prestashop.emit('updateCart', { reason: 'add', resp: response });
       }
 
-      this._showNotification('Productos añadidos al carrito correctamente', 'success');
+      var i18n = window.fsaccesorios_i18n || {};
+      this._showNotification(i18n.success || 'Products added to cart successfully', 'success');
 
       var self = this;
       setTimeout(function () {

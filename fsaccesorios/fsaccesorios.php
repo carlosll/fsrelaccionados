@@ -173,6 +173,12 @@ class Fsaccesorios extends Module
                 true
             ),
             'fsaccesorios_cart_url' => $this->context->link->getPageLink('cart'),
+            'fsaccesorios_i18n' => [
+                'adding'    => $this->l('Adding...'),
+                'success'   => $this->l('Products added to cart successfully'),
+                'no_access' => $this->l('Select at least one accessory.'),
+                'error'     => $this->l('An error occurred. Please try again.'),
+            ],
         ]);
     }
 
