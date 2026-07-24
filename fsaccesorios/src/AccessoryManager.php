@@ -197,11 +197,8 @@ class AccessoryManager
             }
             $seen[$idAttr] = true;
 
-            $qtyAvailable = StockAvailable::getQuantityAvailableByProduct(
-                $idProduct,
-                $idAttr,
-                $this->idShop
-            );
+            // Stock: not managed in this store — always available
+            $qtyAvailable = 999;
 
             $priceImpact = Product::getPriceStatic(
                 $idProduct,
