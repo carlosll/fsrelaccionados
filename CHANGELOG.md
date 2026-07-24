@@ -6,6 +6,11 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.2] — 2026-07-24
+
+### Corregido
+- Hashes MD5 reales en los 5 archivos de traducción (antes usaban placeholders `XXXXX`/`YYYYY` que impedían que `$this->l()` encontrara las traducciones)
+
 ## [1.0.1] — 2026-07-24
 
 ### Corregido
