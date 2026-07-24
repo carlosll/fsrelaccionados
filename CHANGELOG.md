@@ -6,6 +6,20 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.11] — 2026-07-24
+
+### Seguridad
+- **CSRF:** añadido token de seguridad en las peticiones AJAX de add-to-cart. El token se genera en PHP, se envía en el payload y se valida en el controlador.
+- **XSS:** escapado de `$accessory.reference`, `$accessory.name` y `$combination.name` en la plantilla Smarty con `|escape:'html':'UTF-8'`.
+
+### Corregido
+- **JS cargado dos veces:** guardia `window._fsaccesorios_loaded` para evitar doble inicialización cuando ambos hooks (`actionFrontControllerSetMedia` + `displayHeader`) cargan el script.
+- **innerHTML → textContent:** notificaciones toast usan `textContent` en lugar de `innerHTML` para mensajes del servidor.
+- **Combinaciones "Agotado":** `getProductCombinations()` hardcodea `quantity = 999` en vez de consultar `StockAvailable`, igual que el fix de v1.0.5 a nivel producto.
+
+### Mejorado
+- **Layout con combinaciones:** la cantidad se mueve a la fila de la variante (select + qty en línea) para accesorios con combinaciones, evitando solapamiento con el precio.
+
 ## [1.0.10] — 2026-07-24
 
 ### Corregido

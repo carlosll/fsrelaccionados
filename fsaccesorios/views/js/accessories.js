@@ -151,6 +151,7 @@
         id_product: mainProductId,
         quantity: mainQuantity,
         id_customization: 0,
+        token: window.fsaccesorios_token || '',
         accessories: accessories
       };
 

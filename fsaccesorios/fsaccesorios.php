@@ -20,7 +20,7 @@ class Fsaccesorios extends Module
     {
         $this->name = 'fsaccesorios';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.10';
+        $this->version = '1.0.11';
         $this->author = 'FS';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = [
@@ -173,6 +173,7 @@ class Fsaccesorios extends Module
                 true
             ),
             'fsaccesorios_cart_url' => $this->context->link->getPageLink('cart'),
+            'fsaccesorios_token' => Tools::getToken(false),
             'fsaccesorios_i18n' => [
                 'adding'    => $this->l('Adding...'),
                 'success'   => $this->l('Products added to cart successfully'),

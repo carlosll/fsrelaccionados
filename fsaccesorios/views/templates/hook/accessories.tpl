@@ -62,7 +62,7 @@
            title="{$accessory.name|escape:'html':'UTF-8'}"
            target="_blank"
            rel="noopener">
-          {$accessory.name}
+          {$accessory.name|escape:'html':'UTF-8'}
         </a>
         <div class="fsaccesorios-item__meta">
           <span class="fsaccesorios-item__price">{$accessory.price}</span>
@@ -72,7 +72,7 @@
             </span>
           {/if}
           {if $accessory.reference}
-            <span class="fsaccesorios-item__ref">{l s='Ref.' mod='fsaccesorios'} {$accessory.reference}</span>
+            <span class="fsaccesorios-item__ref">{l s='Ref.' mod='fsaccesorios'} {$accessory.reference|escape:'html':'UTF-8'}</span>
           {/if}
         </div>
       </div>
@@ -124,7 +124,7 @@
                     data-quantity="{$combination.quantity}"
                     {if $combination.default_on}selected{/if}
                     {if $combination.quantity <= 0}disabled{/if}>
-              {$combination.name} - {$combination.price}
+              {$combination.name|escape:'html':'UTF-8'} - {$combination.price}
               {if $combination.quantity <= 0} ({l s='Out of stock' mod='fsaccesorios'}){/if}
             </option>
           {/foreach}

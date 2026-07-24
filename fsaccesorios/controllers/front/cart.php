@@ -79,6 +79,15 @@ class FsaccesoriosCartModuleFrontController extends ModuleFrontController
             ]));
         }
 
+        // --- CSRF token validation ---
+        $receivedToken = isset($body['token']) ? (string) $body['token'] : '';
+        if (empty($receivedToken) || $receivedToken !== Tools::getToken(false)) {
+            $this->ajaxDie(json_encode([
+                'success' => false,
+                'errors'  => ['Invalid security token. Please refresh the page and try again.'],
+            ]));
+        }
+
         $idProduct       = (int) $body['id_product'];
         $quantity        = (int) ($body['quantity'] ?? 1);
         $idCustomization = (int) ($body['id_customization'] ?? 0);
