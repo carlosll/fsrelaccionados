@@ -6,6 +6,11 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.7] — 2026-07-24
+
+### Corregido
+- **Add-to-cart:** ahora intercepta el clic en el botón nativo de Panda en fase de captura (`useCapture: true`). Sin botón extra, sin conflicto con el sticky button. Si hay accesorios marcados, añade producto principal + accesorios. Si no, deja que el flujo nativo funcione normalmente.
+
 ## [1.0.6] — 2026-07-24
 
 ### Corregido
