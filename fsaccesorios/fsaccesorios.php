@@ -152,6 +152,7 @@ class Fsaccesorios extends Module
             [
                 'media'    => 'all',
                 'priority' => 200,
+                'version'  => $this->version,
             ]
         );
 
