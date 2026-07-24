@@ -6,6 +6,13 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.5] — 2026-07-24
+
+### Mejorado
+- **Stock:** accesorios siempre disponibles (la tienda no gestiona stock). Eliminado el bloqueo que ponía items en gris.
+- **Texto repetitivo:** eliminado el mensaje inferior duplicado.
+- **Visibilidad visual:** borde izquierdo azul en el bloque, icono en el título, resaltado más visible en fila seleccionada (fondo + borde azul), hover con borde suave.
+
 ## [1.0.4] — 2026-07-24
 
 ### Mejorado

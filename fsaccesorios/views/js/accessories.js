@@ -521,9 +521,11 @@
           }
 
           if (this.checked) {
-            item.style.backgroundColor = 'rgba(4, 101, 178, 0.06)';
+            item.style.backgroundColor = 'rgba(4, 101, 178, 0.08)';
+            item.style.borderLeftColor = 'var(--fsa-accent)';
           } else {
             item.style.backgroundColor = '';
+            item.style.borderLeftColor = '';
           }
         });
       });

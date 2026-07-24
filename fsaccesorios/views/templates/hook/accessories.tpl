@@ -134,15 +134,5 @@
     {/foreach}
   </ul>
 
-  {* --- Hidden message shown when no accessories selected --- *}
-  <p class="fsaccesorios-info" id="fsaccesorios-info">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-      <circle cx="12" cy="12" r="10"/>
-      <line x1="12" y1="16" x2="12" y2="12"/>
-      <line x1="12" y1="8" x2="12.01" y2="8"/>
-    </svg>
-    {l s='Check the accessories you want to add together with the main product' mod='fsaccesorios'}
-  </p>
-
 </div>
 {/if}

@@ -129,13 +129,9 @@ class AccessoryManager
             $idProductAttribute
         );
 
-        // Stock availability
-        $quantityAvailable = StockAvailable::getQuantityAvailableByProduct(
-            $idProduct,
-            $idProductAttribute,
-            $this->idShop
-        );
-        $available = $quantityAvailable > 0;
+        // Stock: not managed in this store — always available
+        $quantityAvailable = 999;
+        $available = true;
 
         // Minimal quantity
         $minimalQuantity = isset($accessory['minimal_quantity']) && (int) $accessory['minimal_quantity'] > 0
