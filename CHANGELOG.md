@@ -6,6 +6,11 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.10] — 2026-07-24
+
+### Corregido
+- **Doble protección add-to-cart:** monkey-patch del prototipo aplicado **inmediatamente** (antes que cualquier otro script) + interceptación de clicks en todos los botones add-to-cart en fase de captura. Si Panda llama a `form.submit()` o el usuario hace click, ambas vías están cubiertas.
+
 ## [1.0.9] — 2026-07-24
 
 ### Corregido
