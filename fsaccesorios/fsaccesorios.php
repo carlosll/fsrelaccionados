@@ -20,7 +20,7 @@ class Fsaccesorios extends Module
     {
         $this->name = 'fsaccesorios';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.2';
+        $this->version = '1.0.3';
         $this->author = 'FS';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = [

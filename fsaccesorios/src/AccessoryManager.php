@@ -87,7 +87,7 @@ class AccessoryManager
 
         // Cover image URL
         $cover = Product::getCover($idProduct);
-        $imageType = ImageType::getFormatedName('small');
+        $imageType = ImageType::getFormattedName('small');
         $imageUrl = $this->link->getImageLink(
             isset($accessory['link_rewrite']) ? $accessory['link_rewrite'] : 'product',
             $cover ? (int) $cover['id_image'] : $idProduct,

@@ -6,6 +6,11 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.3] — 2026-07-24
+
+### Corregido
+- **Fatal error en página de producto**: `ImageType::getFormatedName()` no existe en PS 8.x. Corregido a `getFormattedName()` (doble t). Causaba HTTP 500 en todas las páginas de producto.
+
 ## [1.0.2] — 2026-07-24
 
 ### Corregido
