@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+    <name>fs_category_faq</name>
+    <displayName><![CDATA[FS Category FAQ SEO]]></displayName>
+    <version><![CDATA[1.7.8]]></version>
+    <description><![CDATA[Añade bloques de preguntas frecuentes con datos estructurados JSON-LD FAQPage en páginas de categoría, inicio, CMS y fabricante.]]></description>
+    <author><![CDATA[FS]]></author>
+    <tab><![CDATA[seo]]></tab>
+    <confirmUninstall><![CDATA[¿Estás seguro de que quieres desinstalar este módulo?]]></confirmUninstall>
+    <is_configurable>1</is_configurable>
+    <need_instance>0</need_instance>
+    <limited_countries></limited_countries>
+</module>

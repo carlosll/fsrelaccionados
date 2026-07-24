@@ -1,0 +1,391 @@
+/**
+ * FS Category FAQ SEO — Estilos Front Office
+ *
+ * Diseño elegante y configurable desde el back office (color de acento,
+ * fondo, texto, radio, densidad, sombra e icono). Acordeón nativo con
+ * <details> — cero JS necesario para abrir/cerrar. Totalmente accesible
+ * (teclado + lectores de pantalla + prefers-reduced-motion).
+ *
+ * @version 1.3.1
+ */
+
+/* ──────────────────────────────────────────────
+   Variables CSS
+   El back office vuelca overrides en línea por tienda
+   (ver Fs_Category_Faq::buildDesignStyle()). Estos son
+   los valores por defecto si no hay override.
+   ────────────────────────────────────────────── */
+.fs-category-faq-block {
+    --fs-faq-font-family: inherit;
+    --fs-faq-accent: #1066b2;
+
+    --fs-faq-title-size: 1.5rem;
+    --fs-faq-title-color: #1a1a2e;
+    --fs-faq-title-margin: 0;
+
+    --fs-faq-item-bg: #ffffff;
+    --fs-faq-item-border: #e5e7eb;
+    --fs-faq-item-radius: 12px;
+    --fs-faq-item-margin: 0 0 0.75rem 0;
+    --fs-faq-item-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --fs-faq-item-shadow-hover: 0 10px 24px rgba(0, 0, 0, 0.10);
+
+    --fs-faq-question-padding: 1rem 2.75rem 1rem 1.25rem;
+    --fs-faq-question-color: #1a1a2e;
+    --fs-faq-question-font-weight: 600;
+    --fs-faq-question-font-size: 1rem;
+    --fs-faq-question-bg: var(--fs-faq-item-bg);
+    --fs-faq-question-bg-open: var(--fs-faq-item-bg);
+
+    --fs-faq-answer-padding: 1rem 1.25rem 1.25rem 1.25rem;
+    --fs-faq-answer-color: #4b5563;
+    --fs-faq-answer-font-size: 0.9375rem;
+    --fs-faq-answer-line-height: 1.7;
+
+    --fs-faq-icon-color: var(--fs-faq-accent);
+    --fs-faq-icon-size: 0.625rem;
+    --fs-faq-icon-transition: transform 0.3s cubic-bezier(.4, 0, .2, 1);
+
+    --fs-faq-max-width: 100%;
+    --fs-faq-transition: all 0.25s cubic-bezier(.4, 0, .2, 1);
+
+    --fs-faq-margin-top: 0;
+    --fs-faq-margin-bottom: 2rem;
+
+    display: block;
+    width: 100%;
+    max-width: var(--fs-faq-max-width);
+    margin-inline: auto;
+    margin-top: var(--fs-faq-margin-top);
+    margin-bottom: var(--fs-faq-margin-bottom);
+    font-family: var(--fs-faq-font-family);
+    box-sizing: border-box;
+}
+
+.fs-category-faq-block,
+.fs-category-faq-block *,
+.fs-category-faq-block *::before,
+.fs-category-faq-block *::after {
+    box-sizing: border-box;
+}
+
+/* ──────────────────────────────────────────────
+   Título del bloque
+   ────────────────────────────────────────────── */
+.fs-faq-title-wrap {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 0 0 1.5rem 0;
+}
+
+.fs-faq-title-accent {
+    display: block;
+    width: 4px;
+    height: 1.4em;
+    border-radius: 2px;
+    background: var(--fs-faq-accent);
+    flex-shrink: 0;
+}
+
+.fs-faq-title {
+    font-size: clamp(1.125rem, 4vw + 0.5rem, var(--fs-faq-title-size));
+    color: var(--fs-faq-title-color);
+    margin: var(--fs-faq-title-margin);
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.fs-faq-count {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--fs-faq-accent);
+    background: rgba(0, 0, 0, 0.05);
+    background: color-mix(in srgb, var(--fs-faq-accent) 12%, transparent);
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+/* ──────────────────────────────────────────────
+   Acordeón
+   ────────────────────────────────────────────── */
+.fs-faq-accordion {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* ── Ítem FAQ ── */
+.fs-faq-item {
+    background: var(--fs-faq-item-bg);
+    border: 1px solid var(--fs-faq-item-border);
+    border-left: 3px solid transparent;
+    border-radius: var(--fs-faq-item-radius);
+    margin: var(--fs-faq-item-margin);
+    box-shadow: var(--fs-faq-item-shadow);
+    transition: var(--fs-faq-transition);
+    overflow: hidden;
+}
+
+.fs-faq-item:hover {
+    box-shadow: var(--fs-faq-item-shadow-hover);
+    transform: translateY(-2px);
+}
+
+details.fs-faq-item[open] {
+    border-left-color: var(--fs-faq-accent);
+    box-shadow: var(--fs-faq-item-shadow-hover);
+}
+
+/* ── Pregunta (summary) ── */
+.fs-faq-question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--fs-faq-question-padding);
+    cursor: pointer;
+    font-weight: var(--fs-faq-question-font-weight);
+    font-size: var(--fs-faq-question-font-size);
+    color: var(--fs-faq-question-color);
+    background: var(--fs-faq-question-bg);
+    list-style: none; /* Oculta el triángulo nativo */
+    user-select: none;
+    transition: var(--fs-faq-transition);
+    gap: 1rem;
+}
+
+.fs-faq-question::-webkit-details-marker {
+    display: none; /* Oculta el triángulo en WebKit */
+}
+
+.fs-faq-question:hover {
+    color: var(--fs-faq-accent);
+}
+
+details[open] > .fs-faq-question {
+    background: var(--fs-faq-question-bg-open);
+    border-bottom: 1px solid var(--fs-faq-item-border);
+}
+
+/* ── Icono ── */
+.fs-faq-icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background: rgba(0, 0, 0, 0.045);
+    background: color-mix(in srgb, var(--fs-faq-accent) 10%, transparent);
+    transition: var(--fs-faq-transition);
+}
+
+/* Flecha (chevron) — CSS puro, sin imágenes */
+.fs-faq-icon--chevron {
+    width: var(--fs-faq-icon-size);
+    height: var(--fs-faq-icon-size);
+    border-right: 2px solid var(--fs-faq-icon-color);
+    border-bottom: 2px solid var(--fs-faq-icon-color);
+    transform: rotate(45deg);
+    transition: var(--fs-faq-icon-transition);
+}
+
+details[open] > .fs-faq-question .fs-faq-icon--chevron {
+    transform: rotate(225deg);
+}
+
+/* Más / menos — CSS puro, sin imágenes */
+.fs-faq-icon--plusminus {
+    width: 1rem;
+    height: 1rem;
+    position: relative;
+}
+
+.fs-faq-icon--plusminus::before,
+.fs-faq-icon--plusminus::after {
+    content: '';
+    position: absolute;
+    background: var(--fs-faq-icon-color);
+    transition: var(--fs-faq-icon-transition);
+    border-radius: 2px;
+}
+
+.fs-faq-icon--plusminus::before {
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    transform: translateY(-50%);
+}
+
+.fs-faq-icon--plusminus::after {
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+details[open] > .fs-faq-question .fs-faq-icon--plusminus::after {
+    transform: translateX(-50%) rotate(90deg);
+    opacity: 0;
+}
+
+/* ── Respuesta ── */
+.fs-faq-answer {
+    padding: var(--fs-faq-answer-padding);
+    font-size: var(--fs-faq-answer-font-size);
+    line-height: var(--fs-faq-answer-line-height);
+    color: var(--fs-faq-answer-color);
+}
+
+.fs-faq-answer p {
+    margin: 0 0 0.75rem 0;
+}
+
+.fs-faq-answer p:last-child {
+    margin-bottom: 0;
+}
+
+.fs-faq-answer ul,
+.fs-faq-answer ol {
+    margin: 0 0 0.75rem 0;
+    padding-left: 1.25rem;
+}
+
+.fs-faq-answer li {
+    margin-bottom: 0.25rem;
+}
+
+.fs-faq-answer a {
+    color: var(--fs-faq-accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.fs-faq-answer a:hover {
+    filter: brightness(0.85);
+}
+
+/* ──────────────────────────────────────────────
+   Modo lista (sin acordeón)
+   ────────────────────────────────────────────── */
+.fs-faq-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.fs-faq-list .fs-faq-item {
+    cursor: default;
+}
+
+.fs-faq-list .fs-faq-item:hover {
+    transform: none;
+}
+
+.fs-faq-list .fs-faq-question {
+    cursor: default;
+    border-bottom: 1px solid var(--fs-faq-item-border);
+    margin-bottom: 0;
+}
+
+.fs-faq-list .fs-faq-question:hover {
+    color: var(--fs-faq-question-color);
+}
+
+/* ──────────────────────────────────────────────
+   Animación de apertura (solo acordeón)
+   ────────────────────────────────────────────── */
+@keyframes fs-faq-slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+details[open] .fs-faq-answer {
+    animation: fs-faq-slide-down 0.25s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* ──────────────────────────────────────────────
+   Focus visible (accesibilidad)
+   ────────────────────────────────────────────── */
+.fs-faq-question:focus-visible {
+    outline: 2px solid var(--fs-faq-accent);
+    outline-offset: -2px;
+    border-radius: var(--fs-faq-item-radius);
+}
+
+/* ──────────────────────────────────────────────
+   Responsive
+   ────────────────────────────────────────────── */
+@media (max-width: 576px) {
+    .fs-category-faq-block {
+        --fs-faq-question-padding: 0.875rem 2.5rem 0.875rem 1rem;
+        --fs-faq-answer-padding: 0.875rem 1rem 1rem 1rem;
+    }
+
+    .fs-faq-title-wrap {
+        gap: 0.5rem;
+    }
+
+    .fs-faq-count {
+        display: none;
+    }
+}
+
+/* ──────────────────────────────────────────────
+   Movimiento reducido (accesibilidad)
+   ────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+    .fs-faq-item,
+    .fs-faq-question,
+    .fs-faq-icon-wrap,
+    .fs-faq-icon--chevron,
+    .fs-faq-icon--plusminus::before,
+    .fs-faq-icon--plusminus::after {
+        transition: none;
+    }
+
+    .fs-faq-item:hover {
+        transform: none;
+    }
+
+    details[open] .fs-faq-answer {
+        animation: none;
+    }
+}
+
+/* ──────────────────────────────────────────────
+   Impresión
+   ────────────────────────────────────────────── */
+@media print {
+    .fs-category-faq-block {
+        --fs-faq-item-border: #ccc;
+        --fs-faq-item-shadow: none;
+        --fs-faq-item-shadow-hover: none;
+        max-width: 100%;
+    }
+
+    .fs-faq-item {
+        border-left-color: transparent !important;
+    }
+
+    .fs-faq-icon-wrap,
+    .fs-faq-count {
+        display: none;
+    }
+
+    details .fs-faq-answer {
+        display: block !important;
+    }
+}

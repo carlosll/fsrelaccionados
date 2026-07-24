@@ -1,0 +1,132 @@
+/**
+ * FS Category FAQ SEO — Estilos Back Office
+ *
+ * Estilos complementarios para el gestor de FAQs en el panel
+ * de administración de PrestaShop.
+ *
+ * @version 1.0.0
+ */
+
+/* ──────────────────────────────────────────────
+   Formulario: campos de entidad dinámicos
+   ────────────────────────────────────────────── */
+
+/* Los campos de entidad se muestran/ocultan vía JS
+   según el tipo seleccionado. Por defecto, ocultos
+   excepto el de categoría (valor inicial). */
+
+#fs-faq-entity-category,
+#fs-faq-entity-cms,
+#fs-faq-entity-manufacturer,
+#fs-faq-home-note {
+    transition: opacity 0.15s ease;
+}
+
+/* Estado visible (aplica JS) */
+.fs-faq-entity-visible {
+    display: block;
+    opacity: 1;
+}
+
+/* Estado oculto (aplica JS) */
+.fs-faq-entity-hidden {
+    display: none;
+    opacity: 0;
+}
+
+/* ──────────────────────────────────────────────
+   Listado: badges de tipo de entidad
+   ────────────────────────────────────────────── */
+.fs-faq-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    line-height: 1.5;
+}
+
+.fs-faq-badge--category {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.fs-faq-badge--home {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.fs-faq-badge--cms {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.fs-faq-badge--manufacturer {
+    background: #ede9fe;
+    color: #5b21b6;
+}
+
+/* ──────────────────────────────────────────────
+   Formulario: ayuda contextual
+   ────────────────────────────────────────────── */
+.fs-faq-form-hint {
+    font-size: 0.8125rem;
+    color: #6b7280;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* ──────────────────────────────────────────────
+   Listado: columna de pregunta
+   ────────────────────────────────────────────── */
+.table .fs-faq-question-cell {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ──────────────────────────────────────────────
+   Listado: checkbox de selección masiva
+   Garantiza que la columna de checkboxes sea
+   visible en el listado (a veces el tema admin
+   de PS 8.x la oculta en controladores módulo).
+   ────────────────────────────────────────────── */
+.table .column-cb {
+    display: table-cell !important;
+    width: 30px !important;
+    min-width: 30px !important;
+    text-align: center !important;
+}
+.table th.column-cb input[type="checkbox"],
+.table td.column-cb input[type="checkbox"] {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* ──────────────────────────────────────────────
+   Selector de categorías (tree)
+   ────────────────────────────────────────────── */
+#fs-faq-category-tree {
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 8px;
+    background: #f9fafb;
+}
+
+/* ──────────────────────────────────────────────
+   Mensaje de feedback tras guardar
+   ────────────────────────────────────────────── */
+.fs-faq-flash-msg {
+    animation: fs-faq-fade-out 3s ease forwards;
+}
+
+@keyframes fs-faq-fade-out {
+    0%, 70% { opacity: 1; }
+    100% { opacity: 0; }
+}

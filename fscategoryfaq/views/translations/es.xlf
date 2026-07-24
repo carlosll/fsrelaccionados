@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="es" target-language="es" datatype="plaintext" original="messages" product-name="fs_category_faq">
+    <body>
+      <!-- ===== Admin (Modules.Fs_category_faq.Admin) ===== -->
+      <trans-unit id="a1"><source>Eliminar seleccionados</source><target>Eliminar seleccionados</target></trans-unit>
+      <trans-unit id="a2"><source>¿Eliminar las FAQs seleccionadas?</source><target>¿Eliminar las FAQs seleccionadas?</target></trans-unit>
+      <trans-unit id="a3"><source>ID</source><target>ID</target></trans-unit>
+      <trans-unit id="a4"><source>Tipo</source><target>Tipo</target></trans-unit>
+      <trans-unit id="a5"><source>Categoría</source><target>Categoría</target></trans-unit>
+      <trans-unit id="a6"><source>Inicio</source><target>Inicio</target></trans-unit>
+      <trans-unit id="a7"><source>CMS</source><target>CMS</target></trans-unit>
+      <trans-unit id="a8"><source>Fabricante</source><target>Fabricante</target></trans-unit>
+      <trans-unit id="a9"><source>Entidad</source><target>Entidad</target></trans-unit>
+      <trans-unit id="a10"><source>Pregunta</source><target>Pregunta</target></trans-unit>
+      <trans-unit id="a11"><source>Activo</source><target>Activo</target></trans-unit>
+      <trans-unit id="a12"><source>Posición</source><target>Posición</target></trans-unit>
+      <trans-unit id="a13"><source>Añadir nueva FAQ</source><target>Añadir nueva FAQ</target></trans-unit>
+      <trans-unit id="a14"><source>Configuración del módulo</source><target>Configuración del módulo</target></trans-unit>
+      <trans-unit id="a15"><source>Nueva FAQ</source><target>Nueva FAQ</target></trans-unit>
+      <trans-unit id="a16"><source>Editar FAQ</source><target>Editar FAQ</target></trans-unit>
+      <trans-unit id="a17"><source>Tipo de página</source><target>Tipo de página</target></trans-unit>
+      <trans-unit id="a18"><source>Selecciona dónde aparecerá esta FAQ.</source><target>Selecciona dónde aparecerá esta FAQ.</target></trans-unit>
+      <trans-unit id="a19"><source>Página CMS</source><target>Página CMS</target></trans-unit>
+      <trans-unit id="a20"><source>ID de la entidad</source><target>ID de la entidad</target></trans-unit>
+      <trans-unit id="a21"><source>Sí</source><target>Sí</target></trans-unit>
+      <trans-unit id="a22"><source>No</source><target>No</target></trans-unit>
+      <trans-unit id="a23"><source>Guardar</source><target>Guardar</target></trans-unit>
+      <trans-unit id="a24"><source>Respuesta</source><target>Respuesta</target></trans-unit>
+      <trans-unit id="a25"><source>Orden de aparición (menor = primero). Se autoasigna si se deja en blanco.</source><target>Orden de aparición (menor = primero). Se autoasigna si se deja en blanco.</target></trans-unit>
+      <trans-unit id="a26"><source>— Selecciona —</source><target>— Selecciona —</target></trans-unit>
+      <trans-unit id="a27"><source>La FAQ se mostrará en la página de inicio.</source><target>La FAQ se mostrará en la página de inicio.</target></trans-unit>
+      <trans-unit id="a28"><source>Selecciona la categoría donde aparecerá esta FAQ.</source><target>Selecciona la categoría donde aparecerá esta FAQ.</target></trans-unit>
+      <trans-unit id="a29"><source>Selecciona la página CMS donde aparecerá esta FAQ.</source><target>Selecciona la página CMS donde aparecerá esta FAQ.</target></trans-unit>
+      <trans-unit id="a30"><source>Selecciona el fabricante donde aparecerá esta FAQ.</source><target>Selecciona el fabricante donde aparecerá esta FAQ.</target></trans-unit>
+      <trans-unit id="a31"><source>Máximo 255 caracteres. Sé claro y conciso.</source><target>Máximo 255 caracteres. Sé claro y conciso.</target></trans-unit>
+      <trans-unit id="a32"><source>Entre 50 y 120 palabras. HTML permitido: &lt;p&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, &lt;a&gt;, &lt;br&gt;. No se permiten scripts, iframes ni eventos inline.</source><target>Entre 50 y 120 palabras. HTML permitido: &lt;p&gt;, &lt;strong&gt;, &lt;em&gt;, &lt;ul&gt;, &lt;ol&gt;, &lt;li&gt;, &lt;a&gt;, &lt;br&gt;. No se permiten scripts, iframes ni eventos inline.</target></trans-unit>
+
+      <!-- ===== Main (Modules.Fs_category_faq.Main) ===== -->
+      <trans-unit id="m1"><source>FS Category FAQ SEO</source><target>FS Category FAQ SEO</target></trans-unit>
+      <trans-unit id="m2"><source>Añade bloques de preguntas frecuentes con datos estructurados JSON-LD FAQPage en páginas de categoría, inicio, CMS y fabricante.</source><target>Añade bloques de preguntas frecuentes con datos estructurados JSON-LD FAQPage en páginas de categoría, inicio, CMS y fabricante.</target></trans-unit>
+      <trans-unit id="m3"><source>¿Estás seguro de que quieres desinstalar este módulo?</source><target>¿Estás seguro de que quieres desinstalar este módulo?</target></trans-unit>
+      <trans-unit id="m4"><source>Para gestionar las preguntas frecuentes, accede al</source><target>Para gestionar las preguntas frecuentes, accede al</target></trans-unit>
+      <trans-unit id="m5"><source>Gestor de FAQs</source><target>Gestor de FAQs</target></trans-unit>
+      <trans-unit id="m6"><source>Configuración</source><target>Configuración</target></trans-unit>
+      <trans-unit id="m7"><source>Módulo activo</source><target>Módulo activo</target></trans-unit>
+      <trans-unit id="m8"><source>Mostrar título del bloque</source><target>Mostrar título del bloque</target></trans-unit>
+      <trans-unit id="m9"><source>Título por defecto</source><target>Título por defecto</target></trans-unit>
+      <trans-unit id="m10"><source>Usa {entity_name} para insertar el nombre de la categoría, página o fabricante. Ej: "Preguntas frecuentes sobre {entity_name}"</source><target>Usa {entity_name} para insertar el nombre de la categoría, página o fabricante. Ej: "Preguntas frecuentes sobre {entity_name}"</target></trans-unit>
+      <trans-unit id="m11"><source>Nº máximo de FAQs visibles</source><target>Nº máximo de FAQs visibles</target></trans-unit>
+      <trans-unit id="m12"><source>Entre 1 y 50. Las FAQs sobrantes no se mostrarán.</source><target>Entre 1 y 50. Las FAQs sobrantes no se mostrarán.</target></trans-unit>
+      <trans-unit id="m13"><source>Usar acordeón</source><target>Usar acordeón</target></trans-unit>
+      <trans-unit id="m14"><source>FAQs abiertas por defecto</source><target>FAQs abiertas por defecto</target></trans-unit>
+      <trans-unit id="m15"><source>Si se desactiva, solo la primera FAQ aparece abierta; el resto se muestran cerradas. Si se activa, todas las FAQs se muestran abiertas.</source><target>Si se desactiva, solo la primera FAQ aparece abierta; el resto se muestran cerradas. Si se activa, todas las FAQs se muestran abiertas.</target></trans-unit>
+      <trans-unit id="m16"><source>Clase CSS adicional</source><target>Clase CSS adicional</target></trans-unit>
+      <trans-unit id="m17"><source>Para adaptar el diseño a tu tema. Ej: "panda-faq"</source><target>Para adaptar el diseño a tu tema. Ej: "panda-faq"</target></trans-unit>
+      <trans-unit id="m18"><source>Hook de visualización</source><target>Hook de visualización</target></trans-unit>
+      <trans-unit id="m19"><source>"Hook personalizado" usa displayCategoryFaq (debes añadir {hook h=\'displayCategoryFaq\'} en tu plantilla). "Hook automático" usa displayFooterProduct como fallback.</source><target>"Hook personalizado" usa displayCategoryFaq (debes añadir {hook h=\'displayCategoryFaq\'} en tu plantilla). "Hook automático" usa displayFooterProduct como fallback.</target></trans-unit>
+      <trans-unit id="m20"><source>Hook personalizado (displayCategoryFaq)</source><target>Hook personalizado (displayCategoryFaq)</target></trans-unit>
+      <trans-unit id="m21"><source>Hook automático (displayFooterProduct)</source><target>Hook automático (displayFooterProduct)</target></trans-unit>
+      <trans-unit id="m22"><source>Activar datos estructurados JSON-LD</source><target>Activar datos estructurados JSON-LD</target></trans-unit>
+      <trans-unit id="m23"><source>Genera schema FAQPage para Google. Solo incluye FAQs visibles. El contenido debe coincidir con lo mostrado en pantalla.</source><target>Genera schema FAQPage para Google. Solo incluye FAQs visibles. El contenido debe coincidir con lo mostrado en pantalla.</target></trans-unit>
+      <trans-unit id="m24"><source>Conservar datos al desinstalar</source><target>Conservar datos al desinstalar</target></trans-unit>
+      <trans-unit id="m25"><source>Si está activo, las tablas y FAQs se conservan al desinstalar el módulo. Recomendado para no perder contenido accidentalmente.</source><target>Si está activo, las tablas y FAQs se conservan al desinstalar el módulo. Recomendado para no perder contenido accidentalmente.</target></trans-unit>
+      <trans-unit id="m26"><source>Sí (conservar)</source><target>Sí (conservar)</target></trans-unit>
+      <trans-unit id="m27"><source>No (borrar todo)</source><target>No (borrar todo)</target></trans-unit>
+      <trans-unit id="m28"><source>Configuración guardada correctamente.</source><target>Configuración guardada correctamente.</target></trans-unit>
+      <trans-unit id="m29"><source>El número máximo de FAQs debe estar entre 1 y 50.</source><target>El número máximo de FAQs debe estar entre 1 y 50.</target></trans-unit>
+      <trans-unit id="m30"><source>Página</source><target>Página</target></trans-unit>
+      <trans-unit id="m31"><source>Preguntas frecuentes</source><target>Preguntas frecuentes</target></trans-unit>
+
+      <!-- ===== Diseño y colores (añadido en v1.3.0) ===== -->
+      <trans-unit id="m32"><source>Color de acento</source><target>Color de acento</target></trans-unit>
+      <trans-unit id="m33"><source>Icono, borde del ítem abierto y enlaces. Por defecto, el azul de tu marca.</source><target>Icono, borde del ítem abierto y enlaces. Por defecto, el azul de tu marca.</target></trans-unit>
+      <trans-unit id="m34"><source>Color de fondo de las tarjetas</source><target>Color de fondo de las tarjetas</target></trans-unit>
+      <trans-unit id="m35"><source>Color del texto de la pregunta</source><target>Color del texto de la pregunta</target></trans-unit>
+      <trans-unit id="m36"><source>Color del texto de la respuesta</source><target>Color del texto de la respuesta</target></trans-unit>
+      <trans-unit id="m37"><source>Color de los bordes</source><target>Color de los bordes</target></trans-unit>
+      <trans-unit id="m38"><source>Redondeo de esquinas</source><target>Redondeo de esquinas</target></trans-unit>
+      <trans-unit id="m39"><source>Recto</source><target>Recto</target></trans-unit>
+      <trans-unit id="m40"><source>Suave (recomendado)</source><target>Suave (recomendado)</target></trans-unit>
+      <trans-unit id="m41"><source>Redondeado</source><target>Redondeado</target></trans-unit>
+      <trans-unit id="m42"><source>Muy redondeado</source><target>Muy redondeado</target></trans-unit>
+      <trans-unit id="m43"><source>Densidad del espaciado</source><target>Densidad del espaciado</target></trans-unit>
+      <trans-unit id="m44"><source>Compacta</source><target>Compacta</target></trans-unit>
+      <trans-unit id="m45"><source>Normal (recomendado)</source><target>Normal (recomendado)</target></trans-unit>
+      <trans-unit id="m46"><source>Amplia</source><target>Amplia</target></trans-unit>
+      <trans-unit id="m47"><source>Intensidad de la sombra</source><target>Intensidad de la sombra</target></trans-unit>
+      <trans-unit id="m48"><source>Ninguna</source><target>Ninguna</target></trans-unit>
+      <trans-unit id="m49"><source>Sutil (recomendado)</source><target>Sutil (recomendado)</target></trans-unit>
+      <trans-unit id="m50"><source>Marcada</source><target>Marcada</target></trans-unit>
+      <trans-unit id="m51"><source>Estilo del icono</source><target>Estilo del icono</target></trans-unit>
+      <trans-unit id="m52"><source>Flecha (recomendado)</source><target>Flecha (recomendado)</target></trans-unit>
+      <trans-unit id="m53"><source>Más / menos</source><target>Más / menos</target></trans-unit>
+      <trans-unit id="m54"><source>Sin icono</source><target>Sin icono</target></trans-unit>
+      <trans-unit id="m55"><source>Tamaño del texto</source><target>Tamaño del texto</target></trans-unit>
+      <trans-unit id="m56"><source>Escala proporcionalmente el título, la pregunta y la respuesta.</source><target>Escala proporcionalmente el título, la pregunta y la respuesta.</target></trans-unit>
+      <trans-unit id="m57"><source>Compacto</source><target>Compacto</target></trans-unit>
+      <trans-unit id="m58"><source>Grande</source><target>Grande</target></trans-unit>
+      <trans-unit id="m59"><source>Extra grande</source><target>Extra grande</target></trans-unit>
+      <trans-unit id="m60"><source>Ancho del bloque</source><target>Ancho del bloque</target></trans-unit>
+      <trans-unit id="m61"><source>"100% del contenedor" evita que el bloque quede recortado y ocupa todo el ancho disponible.</source><target>"100% del contenedor" evita que el bloque quede recortado y ocupa todo el ancho disponible.</target></trans-unit>
+      <trans-unit id="m62"><source>100% del contenedor (recomendado)</source><target>100% del contenedor (recomendado)</target></trans-unit>
+      <trans-unit id="m63"><source>Máximo 1200px, centrado</source><target>Máximo 1200px, centrado</target></trans-unit>
+      <trans-unit id="m64"><source>Máximo 960px, centrado</source><target>Máximo 960px, centrado</target></trans-unit>
+      <trans-unit id="m65"><source>Máximo 800px, centrado</source><target>Máximo 800px, centrado</target></trans-unit>
+      <trans-unit id="m66"><source>1 pregunta</source><target>1 pregunta</target></trans-unit>
+      <trans-unit id="m67"><source>%d preguntas</source><target>%d preguntas</target></trans-unit>
+
+      <!-- ===== Import/Export (añadido en v1.5.0) ===== -->
+      <trans-unit id="a33"><source>Importar FAQs</source><target>Importar FAQs</target></trans-unit>
+      <trans-unit id="a34"><source>Exportar FAQs</source><target>Exportar FAQs</target></trans-unit>
+      <trans-unit id="a35"><source>Importar</source><target>Importar</target></trans-unit>
+      <trans-unit id="a36"><source>Archivo JSON</source><target>Archivo JSON</target></trans-unit>
+      <trans-unit id="a37"><source>Volver al listado</source><target>Volver al listado</target></trans-unit>
+      <trans-unit id="a38"><source>Importar FAQs desde archivo JSON</source><target>Importar FAQs desde archivo JSON</target></trans-unit>
+      <trans-unit id="a39"><source>Selecciona un archivo .json generado por DinoRank API u otra herramienta compatible con el formato de importación del módulo.</source><target>Selecciona un archivo .json generado por DinoRank API u otra herramienta compatible con el formato de importación del módulo.</target></trans-unit>
+      <trans-unit id="a40"><source>Formato esperado:</source><target>Formato esperado:</target></trans-unit>
+      <trans-unit id="a41"><source>El archivo no puede superar los 5 MB.</source><target>El archivo no puede superar los 5 MB.</target></trans-unit>
+      <trans-unit id="a42"><source>Las FAQs se importan en el idioma por defecto de la tienda y con la posición autoasignada.</source><target>Las FAQs se importan en el idioma por defecto de la tienda y con la posición autoasignada.</target></trans-unit>
+      <trans-unit id="a43"><source>Archivo .json con las FAQs a importar.</source><target>Archivo .json con las FAQs a importar.</target></trans-unit>
+      <trans-unit id="a44"><source>No se ha seleccionado ningún archivo. Elige un archivo .json antes de pulsar Importar.</source><target>No se ha seleccionado ningún archivo. Elige un archivo .json antes de pulsar Importar.</target></trans-unit>
+      <trans-unit id="a45"><source>El archivo excede el tamaño máximo de 5 MB.</source><target>El archivo excede el tamaño máximo de 5 MB.</target></trans-unit>
+      <trans-unit id="a46"><source>Solo se aceptan archivos .json.</source><target>Solo se aceptan archivos .json.</target></trans-unit>
+      <trans-unit id="a47"><source>El archivo está vacío o no se puede leer.</source><target>El archivo está vacío o no se puede leer.</target></trans-unit>
+      <trans-unit id="a48"><source>El archivo no contiene JSON válido: %s</source><target>El archivo no contiene JSON válido: %s</target></trans-unit>
+      <trans-unit id="a49"><source>Formato incorrecto: el JSON debe contener un array "faqs".</source><target>Formato incorrecto: el JSON debe contener un array "faqs".</target></trans-unit>
+      <trans-unit id="a50"><source>El array "faqs" está vacío. No hay nada que importar.</source><target>El array "faqs" está vacío. No hay nada que importar.</target></trans-unit>
+      <trans-unit id="a51"><source>FAQ #%d: %s</source><target>FAQ #%d: %s</target></trans-unit>
+      <trans-unit id="a52"><source>%d añadidas</source><target>%d añadidas</target></trans-unit>
+      <trans-unit id="a53"><source>Reemplazar FAQs existentes en las mismas páginas</source><target>Reemplazar FAQs existentes en las mismas páginas</target></trans-unit>
+      <trans-unit id="a54"><source>⚠️ Se eliminarán solo las FAQs que estén en las mismas páginas (categoría, CMS, etc.) que las del archivo. Las FAQs de otras páginas no se tocan. Por ejemplo: si importas FAQs de la categoría "Generadores" y de "Inicio", se borrarán las FAQs actuales de esas dos páginas, pero las FAQs de otras categorías se conservan intactas. Usa Exportar para hacer una copia de seguridad antes.</source><target>⚠️ Se eliminarán solo las FAQs que estén en las mismas páginas (categoría, CMS, etc.) que las del archivo. Las FAQs de otras páginas no se tocan. Por ejemplo: si importas FAQs de la categoría "Generadores" y de "Inicio", se borrarán las FAQs actuales de esas dos páginas, pero las FAQs de otras categorías se conservan intactas. Usa Exportar para hacer una copia de seguridad antes.</target></trans-unit>
+      <trans-unit id="a55"><source>Se eliminaron %d FAQs existentes de las mismas páginas antes de importar.</source><target>Se eliminaron %d FAQs existentes de las mismas páginas antes de importar.</target></trans-unit>
+      <trans-unit id="a56"><source>Si la pregunta ya existe en esa página</source><target>Si la pregunta ya existe en esa página</target></trans-unit>
+      <trans-unit id="a57"><source>Añadir de todas formas (puede crear duplicados)</source><target>Añadir de todas formas (puede crear duplicados)</target></trans-unit>
+      <trans-unit id="a58"><source>Saltar pregunta (no importar la repetida, conservar la existente)</source><target>Saltar pregunta (no importar la repetida, conservar la existente)</target></trans-unit>
+      <trans-unit id="a59"><source>Actualizar respuesta (sobrescribir la respuesta y estado de la FAQ existente)</source><target>Actualizar respuesta (sobrescribir la respuesta y estado de la FAQ existente)</target></trans-unit>
+      <trans-unit id="a60"><source>Una pregunta se considera duplicada cuando ya existe otra con el mismo texto exacto en la misma página (misma categoría, CMS, etc.).</source><target>Una pregunta se considera duplicada cuando ya existe otra con el mismo texto exacto en la misma página (misma categoría, CMS, etc.).</target></trans-unit>
+      <trans-unit id="a61"><source>%d actualizadas</source><target>%d actualizadas</target></trans-unit>
+      <trans-unit id="a62"><source>%d saltadas (ya existían)</source><target>%d saltadas (ya existían)</target></trans-unit>
+      <trans-unit id="a63"><source>%d errores</source><target>%d errores</target></trans-unit>
+      <trans-unit id="a64"><source>No se procesó ninguna FAQ.</source><target>No se procesó ninguna FAQ.</target></trans-unit>
+      <trans-unit id="a65"><source>Tamaño del título</source><target>Tamaño del título</target></trans-unit>
+      <trans-unit id="a66"><source>Controla solo el tamaño del título del bloque de FAQs, independientemente de la escala del texto.</source><target>Controla solo el tamaño del título del bloque de FAQs, independientemente de la escala del texto.</target></trans-unit>
+      <trans-unit id="a67"><source>Pequeño (1.25rem)</source><target>Pequeño (1.25rem)</target></trans-unit>
+      <trans-unit id="a68"><source>Mediano (1.5rem)</source><target>Mediano (1.5rem)</target></trans-unit>
+      <trans-unit id="a69"><source>Grande (1.875rem)</source><target>Grande (1.875rem)</target></trans-unit>
+      <trans-unit id="a70"><source>Extra grande (2.25rem)</source><target>Extra grande (2.25rem)</target></trans-unit>
+      <trans-unit id="a71"><source>XXL (2.75rem)</source><target>XXL (2.75rem)</target></trans-unit>
+      <trans-unit id="a72"><source>Escala proporcionalmente la pregunta y la respuesta. El título se controla por separado en el campo inferior.</source><target>Escala proporcionalmente la pregunta y la respuesta. El título se controla por separado en el campo inferior.</target></trans-unit>
+      <trans-unit id="a73"><source>Activar seleccionados</source><target>Activar seleccionados</target></trans-unit>
+      <trans-unit id="a74"><source>Desactivar seleccionados</source><target>Desactivar seleccionados</target></trans-unit>
+    </body>
+  </file>
+</xliff>
