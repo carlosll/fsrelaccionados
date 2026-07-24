@@ -6,6 +6,14 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.1] — 2026-07-24
+
+### Corregido
+- Archivos `index.php` ausentes en todos los directorios del módulo (seguridad PrestaShop)
+- Hook de fallback `displayFooterProduct` añadido para compatibilidad con temas sin `displayProductAdditionalInfo`
+
+---
+
 ## [1.0.0] — 2026-07-24
 
 ### Añadido

@@ -20,7 +20,7 @@ class Fsaccesorios extends Module
     {
         $this->name = 'fsaccesorios';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.0';
+        $this->version = '1.0.1';
         $this->author = 'FS';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = [
@@ -49,6 +49,7 @@ class Fsaccesorios extends Module
     {
         return parent::install()
             && $this->registerHook('displayProductAdditionalInfo')
+            && $this->registerHook('displayFooterProduct')
             && $this->registerHook('actionFrontControllerSetMedia')
             && $this->registerHook('displayHeader');
     }
@@ -71,6 +72,30 @@ class Fsaccesorios extends Module
      * @return string Rendered HTML or empty string if no accessories
      */
     public function hookDisplayProductAdditionalInfo($params)
+    {
+        return $this->renderAccessoriesBlock($params);
+    }
+
+    /**
+     * Fallback hook for themes without displayProductAdditionalInfo.
+     *
+     * @param array $params Hook parameters containing the product data
+     *
+     * @return string Rendered HTML or empty string if no accessories
+     */
+    public function hookDisplayFooterProduct($params)
+    {
+        return $this->renderAccessoriesBlock($params);
+    }
+
+    /**
+     * Render the accessories block from hook parameters.
+     *
+     * @param array $params Hook parameters
+     *
+     * @return string Rendered HTML or empty string
+     */
+    private function renderAccessoriesBlock($params)
     {
         if (!isset($params['product']['id_product'])) {
             return '';
