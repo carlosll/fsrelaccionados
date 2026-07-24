@@ -238,7 +238,7 @@
     },
 
     _onError: function (errors) {
-      var msg = Array.isArray(errors) ? errors.join('<br>') : errors;
+      var msg = Array.isArray(errors) ? errors.join('\n') : errors;
       this._showNotification(msg, 'error');
       if (this.block) {
         this.block.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -256,7 +256,7 @@
 
       var toast = document.createElement('div');
       toast.className = 'fsaccesorios-notification fsaccesorios-notification--' + type;
-      toast.innerHTML = message;
+      toast.textContent = message;
       toast.setAttribute('role', 'alert');
       document.body.appendChild(toast);
 

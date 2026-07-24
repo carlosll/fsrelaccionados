@@ -471,6 +471,7 @@
               transform var(--fsa-transition-slow);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
   pointer-events: none;
+  white-space: pre-line;
 }
 
 .fsaccesorios-notification--visible {
