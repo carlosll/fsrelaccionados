@@ -78,39 +78,48 @@
     },
 
     /**
-     * Intercept the add-to-cart button click in the CAPTURING phase.
-     * This fires BEFORE Panda's sticky button handler, so we can
-     * stop propagation when accessories are selected.
+     * Intercept the add-to-cart form submission.
+     *
+     * Panda's sticky button calls form.submit() programmatically, which
+     * does NOT fire the 'submit' event (JS quirk). We monkey-patch the
+     * form's submit() method to catch ALL submission paths.
      */
     _bindAddToCart: function () {
       var self = this;
+      var form = this.addToCartBtn.closest('form');
 
-      // Use capturing phase (true) to beat Panda's handler
-      this.addToCartBtn.addEventListener('click', function (e) {
-        if (self.isProcessing) {
-          e.stopImmediatePropagation();
-          e.preventDefault();
-          return;
-        }
+      if (!form) {
+        form = document.getElementById('add-to-cart-or-refresh');
+      }
+
+      if (!form) { return; }
+
+      // Store reference to the native submit method
+      var nativeSubmit = form.submit.bind(form);
+
+      // Replace with our wrapper
+      form.submit = function () {
+        if (self.isProcessing) { return; }
 
         var accessories = self._getSelectedAccessories();
 
-        // No accessories selected: let the native flow work
+        // No accessories: use native submit
         if (accessories.length === 0) {
+          nativeSubmit();
           return;
         }
 
-        // Accessories selected: we handle it
-        e.stopImmediatePropagation();
-        e.preventDefault();
-
+        // Accessories selected: our AJAX flow
         var mainProductId = self._getMainProductId();
         var mainQuantity = self._getMainQuantity();
 
-        if (mainProductId <= 0) { return; }
+        if (mainProductId <= 0) {
+          nativeSubmit();
+          return;
+        }
 
         self._executeAddToCart(mainProductId, mainQuantity, accessories);
-      }, true); // <-- capturing phase
+      };
     },
 
     _executeAddToCart: function (mainProductId, mainQuantity, accessories) {

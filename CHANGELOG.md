@@ -6,6 +6,11 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.8] — 2026-07-24
+
+### Corregido
+- **Add-to-cart real:** monkey-patch de `form.submit()` para interceptar el envío programático de Panda. El `form.submit()` nativo no dispara el evento `submit`, así que ningún `addEventListener` funcionaba. Ahora reemplazamos el método directamente.
+
 ## [1.0.7] — 2026-07-24
 
 ### Corregido
