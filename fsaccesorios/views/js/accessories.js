@@ -8,6 +8,13 @@
 (function () {
   'use strict';
 
+  // Guard against double-loading: both actionFrontControllerSetMedia and
+  // displayHeader may load this script on product pages. The displayHeader
+  // fallback exists for themes/plugins (jprestaspeedpack) that strip assets
+  // registered via the asset pipeline.
+  if (window._fsaccesorios_loaded) { return; }
+  window._fsaccesorios_loaded = true;
+
   // ============================================================
   // IMMEDIATE: Monkey-patch HTMLFormElement.prototype.submit
   // Must run before Panda or any other module stores a reference
