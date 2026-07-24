@@ -1,34 +1,52 @@
 /**
  * fsaccesorios - Product Accessories Block Styles
  *
- * Design principles:
+ * Design follows the FS module guidelines (DESIGN.md).
+ * Uses theme CSS variables (--fes-*) when available, with sensible fallbacks
+ * for environments where the theme is not present (testing, classic theme, etc.).
+ *
+ * Principles:
  * - 100% custom CSS with fsaccesorios- prefix, no Bootstrap dependency
- * - Flexbox layout, responsive, elegant and integrated with ecommerce themes
- * - CSS custom properties allow theme-level overrides
- * - Compatible with PrestaShop 8.2 classic theme and 9.x hummingbird
+ * - Flexbox layout, responsive, integrated with Fusion Energia Solar
+ * - Compatible with PrestaShop 8.2 classic theme, Panda 2.8, and 9.x hummingbird
  */
 
 /* ============================================
-   Design Tokens (overridable by theme)
+   Design Tokens
+   Inherits from theme --fes-* variables when available.
+   Falls back to corporate values when the theme is absent.
    ============================================ */
 :root {
-  --fsa-border-color: #e5e5e5;
-  --fsa-border-light: #f0f0f0;
-  --fsa-bg: #ffffff;
-  --fsa-hover-bg: #fafafa;
-  --fsa-active-bg: #f5f5f5;
-  --fsa-text-primary: #232323;
-  --fsa-text-secondary: #777777;
-  --fsa-text-price: #232323;
-  --fsa-accent: #25b9d7;
-  --fsa-accent-hover: #1a9bb5;
-  --fsa-danger: #dc3545;
-  --fsa-success: #4caf50;
-  --fsa-radius: 4px;
-  --fsa-radius-sm: 3px;
-  --fsa-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
-  --fsa-transition: 0.15s ease;
-  --fsa-transition-slow: 0.3s ease;
+  /* Borders — prefer theme, fall back to corporate */
+  --fsa-border-color: var(--fes-border, #dfe6eb);
+  --fsa-border-light: var(--fes-border-soft, #edf1f4);
+
+  /* Backgrounds */
+  --fsa-bg:       var(--fes-white, #fff);
+  --fsa-hover-bg: var(--fes-surface-soft, #f8fafc);
+  --fsa-active-bg:#edf1f4;
+
+  /* Text */
+  --fsa-text-primary:   var(--fes-text, #2b3137);
+  --fsa-text-secondary: var(--fes-text-secondary, #5a6570);
+  --fsa-text-price:     var(--fes-text, #2b3137);
+
+  /* Accent — corporate blue for links, selections, focus rings */
+  --fsa-accent:       var(--fes-blue, #0465b2);
+  --fsa-accent-hover: var(--fes-blue-hover, #003d7a);
+
+  /* Semantic */
+  --fsa-danger:  #dc3545;
+  --fsa-success: #2e7d32;
+
+  /* Shape */
+  --fsa-radius:    var(--fes-radius, 8px);
+  --fsa-radius-sm: 4px;
+  --fsa-shadow-sm: var(--fes-shadow-sm, 0 1px 3px rgba(0, 0, 0, 0.06));
+
+  /* Motion */
+  --fsa-transition:      var(--fes-transition, .18s ease);
+  --fsa-transition-slow: .3s ease;
 }
 
 /* ============================================
@@ -165,7 +183,7 @@
 
 /* Focus visible */
 .fsaccesorios-checkbox:focus-visible + .fsaccesorios-checkbox-custom {
-  box-shadow: 0 0 0 3px rgba(37, 185, 215, 0.25);
+  box-shadow: 0 0 0 3px rgba(4, 101, 178, 0.25);
 }
 
 /* Hover */
@@ -392,7 +410,7 @@
 .fsaccesorios-combination-select:focus {
   outline: none;
   border-color: var(--fsa-accent);
-  box-shadow: 0 0 0 3px rgba(37, 185, 215, 0.15);
+  box-shadow: 0 0 0 3px rgba(4, 101, 178, 0.15);
 }
 
 .fsaccesorios-combination-select:disabled {

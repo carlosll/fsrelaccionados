@@ -521,7 +521,7 @@
           }
 
           if (this.checked) {
-            item.style.backgroundColor = 'rgba(37, 185, 215, 0.04)';
+            item.style.backgroundColor = 'rgba(4, 101, 178, 0.06)';
           } else {
             item.style.backgroundColor = '';
           }

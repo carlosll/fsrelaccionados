@@ -6,6 +6,13 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.4] — 2026-07-24
+
+### Mejorado
+- **Integración visual con el tema:** los tokens de diseño ahora heredan de las variables CSS del tema (`--fes-*`) con fallbacks corporativos. El acento cambia de cyan a azul corporativo (#0465b2).
+- **Anillos de foco** corregidos al azul de la marca.
+- **Resaltado de fila seleccionada** en JS ajustado al azul corporativo.
+
 ## [1.0.3] — 2026-07-24
 
 ### Corregido
