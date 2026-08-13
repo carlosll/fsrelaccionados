@@ -6,6 +6,11 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.15] — 2026-08-13
+
+### Corregido
+- **Regresión v1.0.13 — doble añadido con Panda:** se revierte el `defer` del script fallback de `hookDisplayHeader`. Con `defer`, el monkey-patch de `HTMLFormElement.prototype.submit` se ejecutaba después de los scripts de Panda, perdía la carrera y el envío nativo de Panda corría en paralelo con el flujo AJAX del módulo (producto duplicado en el carrito). El patch debe ejecutarse síncronamente en head, antes que cualquier otro script.
+
 ## [1.0.14] — 2026-08-13
 
 ### Corregido

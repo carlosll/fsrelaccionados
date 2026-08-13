@@ -20,7 +20,7 @@ class Fsaccesorios extends Module
     {
         $this->name = 'fsaccesorios';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.14';
+        $this->version = '1.0.15';
         $this->author = 'FS';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = [
@@ -201,7 +201,11 @@ class Fsaccesorios extends Module
             return '';
         }
 
-        return '<script defer src="'
+        // NOTE: no `defer` here on purpose. The monkey-patch of
+        // HTMLFormElement.prototype.submit must run BEFORE Panda's scripts
+        // capture/replace it; with defer the patch loses that race and
+        // Panda's native add runs alongside ours (double add).
+        return '<script src="'
             . $this->_path . 'views/js/accessories.js?v=' . $this->version
             . '"></script>';
     }
