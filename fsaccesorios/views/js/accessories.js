@@ -39,9 +39,25 @@
       return nativeSubmit.call(this);
     }
 
-    // Prevent the native submit — our AJAX controller handles it
-    // Don't call nativeSubmit, don't return — just fall through to nothing.
-    // The AJAX call will redirect to cart on success.
+    // Accessories selected: the AJAX controller handles the cart.
+    // If a click handler already started the AJAX call (isProcessing),
+    // just swallow this submit to avoid a double add. Otherwise
+    // (programmatic submit from Panda/theme without a button click),
+    // trigger the AJAX flow here.
+    if (typeof Fsaccesorios !== 'undefined'
+        && Fsaccesorios.block
+        && !Fsaccesorios.isProcessing) {
+      var mainProductId = Fsaccesorios._getMainProductId();
+      if (mainProductId > 0) {
+        Fsaccesorios._executeAddToCart(
+          mainProductId,
+          Fsaccesorios._getMainProductAttribute(),
+          Fsaccesorios._getMainQuantity(),
+          accessories
+        );
+      }
+    }
+    // Never call nativeSubmit when accessories are selected.
   };
 
   // ============================================================
@@ -61,11 +77,13 @@
 
       if (!this.block) { return; }
 
+      // Wire up the accessories getter for the prototype patch.
+      // Bound even when no add-to-cart button exists, so a programmatic
+      // form.submit() with accessories selected is still intercepted.
+      _selectedAccessories = this._getSelectedAccessories.bind(this);
+
       this.addToCartBtn = document.querySelector('[data-button-action="add-to-cart"]');
       if (!this.addToCartBtn) { return; }
-
-      // Wire up the accessories getter for the prototype patch
-      _selectedAccessories = this._getSelectedAccessories.bind(this);
 
       this._bindAddToCartClick();
       this._bindQuantityControls();

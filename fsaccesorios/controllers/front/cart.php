@@ -80,8 +80,14 @@ class FsaccesoriosCartModuleFrontController extends ModuleFrontController
         }
 
         // --- CSRF token validation ---
+        // Static token (Tools::getToken(false)) mirrors PrestaShop's own
+        // FrontController::isTokenValid() for front-office AJAX and stays
+        // valid on fully cached product pages (FPC-safe), unlike a
+        // session-bound token.
         $receivedToken = isset($body['token']) ? (string) $body['token'] : '';
-        if (empty($receivedToken) || $receivedToken !== Tools::getToken(false)) {
+        if (empty($receivedToken)
+            || strcasecmp($receivedToken, Tools::getToken(false)) !== 0
+        ) {
             $this->ajaxDie(json_encode([
                 'success' => false,
                 'errors'  => ['Invalid security token. Please refresh the page and try again.'],

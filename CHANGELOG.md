@@ -6,6 +6,20 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.13] — 2026-08-13
+
+### Corregido
+- **Submit programático con accesorios seleccionados:** si Panda o el tema llama a `form.submit()` sin click previo en el botón, el monkey-patch dispara ahora el flujo AJAX (antes se tragaba el submit silenciosamente: ni añadía ni redirigía). Si el AJAX ya está en curso, el submit se descarta para evitar dobles añadidos.
+- **Guard `is_array`:** `validateAccessories()` rechaza entradas que no son array en el payload de accesorios sin generar warnings de PHP 8.
+
+### Mejorado
+- **CSRF alineado con el core:** la comparación del token usa `strcasecmp`, igual que `FrontController::isTokenValid()`. Comentario documentando por qué el token estático es la opción correcta (válido con full page cache).
+- **`defer` en el script fallback** de `hookDisplayHeader` — no bloquea el render de la página.
+- **Getter de accesorios enlazado siempre:** `_selectedAccessories` se conecta aunque el tema no tenga botón con `[data-button-action="add-to-cart"]`, de modo que el patch del prototipo sigue funcionando.
+
+### Eliminado
+- `fs_static_token` asignado a Smarty sin uso en la plantilla.
+
 ## [1.0.12] — 2026-08-13
 
 ### Corregido

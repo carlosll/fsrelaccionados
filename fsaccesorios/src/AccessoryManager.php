@@ -237,6 +237,14 @@ class AccessoryManager
         $errors = [];
 
         foreach ($accessories as $index => $acc) {
+            if (!is_array($acc)) {
+                $errors[] = sprintf(
+                    'Invalid accessory data at position %d',
+                    $index + 1
+                );
+                continue;
+            }
+
             $idProduct = (int) ($acc['id_product'] ?? 0);
             $idAttr    = (int) ($acc['id_product_attribute'] ?? 0);
             $qty       = (int) ($acc['quantity'] ?? 0);

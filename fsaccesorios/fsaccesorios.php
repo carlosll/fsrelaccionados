@@ -20,7 +20,7 @@ class Fsaccesorios extends Module
     {
         $this->name = 'fsaccesorios';
         $this->tab = 'front_office_features';
-        $this->version = '1.0.12';
+        $this->version = '1.0.13';
         $this->author = 'FS';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = [
@@ -121,9 +121,8 @@ class Fsaccesorios extends Module
         }
 
         $this->context->smarty->assign([
-            'fs_accessories'  => $accessories,
-            'fs_module_dir'   => $this->_path,
-            'fs_static_token' => Tools::getToken(false),
+            'fs_accessories' => $accessories,
+            'fs_module_dir'  => $this->_path,
         ]);
 
         return $this->display(__FILE__, 'views/templates/hook/accessories.tpl');
@@ -202,7 +201,7 @@ class Fsaccesorios extends Module
             return '';
         }
 
-        return '<script src="'
+        return '<script defer src="'
             . $this->_path . 'views/js/accessories.js?v=' . $this->version
             . '"></script>';
     }
