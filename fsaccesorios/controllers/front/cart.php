@@ -88,10 +88,11 @@ class FsaccesoriosCartModuleFrontController extends ModuleFrontController
             ]));
         }
 
-        $idProduct       = (int) $body['id_product'];
-        $quantity        = (int) ($body['quantity'] ?? 1);
-        $idCustomization = (int) ($body['id_customization'] ?? 0);
-        $accessories     = $body['accessories'] ?? [];
+        $idProduct            = (int) $body['id_product'];
+        $idProductAttribute   = (int) ($body['id_product_attribute'] ?? 0);
+        $quantity             = (int) ($body['quantity'] ?? 1);
+        $idCustomization      = (int) ($body['id_customization'] ?? 0);
+        $accessories          = $body['accessories'] ?? [];
 
         // Sanity check on main quantity
         if ($quantity < 1) {
@@ -105,6 +106,19 @@ class FsaccesoriosCartModuleFrontController extends ModuleFrontController
                 'success' => false,
                 'errors'  => ['The main product is not available'],
             ]));
+        }
+
+        // Validate the selected combination belongs to the main product
+        if ($idProductAttribute > 0) {
+            $combination = new Combination($idProductAttribute);
+            if (!Validate::isLoadedObject($combination)
+                || (int) $combination->id_product !== $idProduct
+            ) {
+                $this->ajaxDie(json_encode([
+                    'success' => false,
+                    'errors'  => ['Invalid product combination'],
+                ]));
+            }
         }
 
         // --- Validate accessories ---
@@ -148,11 +162,11 @@ class FsaccesoriosCartModuleFrontController extends ModuleFrontController
         $mainResult = $cart->updateQty(
             $quantity,
             $idProduct,
-            null,              // id_product_attribute (null = default)
-            $idCustomization,  // id_customization
-            'up',              // operator: 'up' = add/increase
-            0,                 // id_address_delivery
-            null               // shop (null = context shop)
+            $idProductAttribute ?: null, // id_product_attribute (null = default)
+            $idCustomization,            // id_customization
+            'up',                        // operator: 'up' = add/increase
+            0,                           // id_address_delivery
+            null                         // shop (null = context shop)
         );
 
         if (!$mainResult) {

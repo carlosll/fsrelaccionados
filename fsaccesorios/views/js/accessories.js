@@ -78,6 +78,11 @@
       return input ? parseInt(input.value, 10) : 0;
     },
 
+    _getMainProductAttribute: function () {
+      var input = document.querySelector('input[name="id_product_attribute"]');
+      return input ? (parseInt(input.value, 10) || 0) : 0;
+    },
+
     _getMainQuantity: function () {
       var input = document.querySelector('input[name="qty"]');
       return input ? parseInt(input.value, 10) : 1;
@@ -140,15 +145,17 @@
           var mainQuantity = self._getMainQuantity();
           if (mainProductId <= 0) { return; }
 
-          self._executeAddToCart(mainProductId, mainQuantity, accessories);
+          var mainProductAttribute = self._getMainProductAttribute();
+          self._executeAddToCart(mainProductId, mainProductAttribute, mainQuantity, accessories);
         }, true); // capturing phase
       });
     },
 
-    _executeAddToCart: function (mainProductId, mainQuantity, accessories) {
+    _executeAddToCart: function (mainProductId, mainProductAttribute, mainQuantity, accessories) {
       var self = this;
       var payload = {
         id_product: mainProductId,
+        id_product_attribute: mainProductAttribute,
         quantity: mainQuantity,
         id_customization: 0,
         token: window.fsaccesorios_token || '',

@@ -13,6 +13,8 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 - **Nombre truncado en desktop:** se elimina el ellipsis/`nowrap` del nombre en pantallas de escritorio; solo se trunca en móvil/tablet.
 - **Precio y referencia:** eliminado `white-space: nowrap`, ya no fuerzan el ancho de la fila.
 - **Cache busting del CSS:** `accessories.css` se registra con `'version' => $this->version`, de modo que cada actualización del módulo invalida la caché del navegador.
+- **Combinación del producto principal:** el JS envía y el controlador usa `id_product_attribute`, añadiendo al carrito la variante seleccionada por el cliente (antes se añadía siempre la variante por defecto).
+- **Validación de combinaciones en servidor:** el controlador y `validateAccessories()` verifican que cada `id_product_attribute` enviado pertenece al producto correspondiente (accesorios y producto principal), rechazando peticiones manipuladas.
 
 ### Mejorado
 - **Layout más compacto:** reducidos paddings, gaps y márgenes del bloque, cabecera e items.

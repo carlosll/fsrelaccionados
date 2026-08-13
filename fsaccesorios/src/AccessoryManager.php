@@ -261,13 +261,32 @@ class AccessoryManager
                 continue;
             }
 
+            $productName = is_array($product->name)
+                ? ($product->name[$this->idLang] ?? reset($product->name))
+                : $product->name;
+            $productName = $productName ?: 'Product #' . $idProduct;
+
             // Verify it's actually an accessory of the main product
             if (!$this->isAccessoryOf($idProduct, $mainProductId)) {
                 $errors[] = sprintf(
                     'Product "%s" is not an accessory of this product',
-                    (is_array($product->name) ? ($product->name[$this->idLang] ?? reset($product->name)) : ($product->name ?: 'Product #' . $idProduct))
+                    $productName
                 );
                 continue;
+            }
+
+            // Verify the selected combination belongs to this product
+            if ($idAttr > 0) {
+                $combination = new Combination($idAttr);
+                if (!Validate::isLoadedObject($combination)
+                    || (int) $combination->id_product !== $idProduct
+                ) {
+                    $errors[] = sprintf(
+                        'Invalid combination for product "%s"',
+                        $productName
+                    );
+                    continue;
+                }
             }
 
             // Validate quantity
@@ -277,12 +296,9 @@ class AccessoryManager
             }
 
             if ($qty < $minimalQty) {
-                $productName = is_array($product->name)
-                    ? ($product->name[$this->idLang] ?? reset($product->name))
-                    : $product->name;
                 $errors[] = sprintf(
                     'Minimum quantity for "%s" is %d',
-                    $productName ?: 'Product #' . $idProduct,
+                    $productName,
                     $minimalQty
                 );
                 continue;
