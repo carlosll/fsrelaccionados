@@ -100,6 +100,19 @@ class FsaccesoriosCartModuleFrontController extends ModuleFrontController
         $idCustomization      = (int) ($body['id_customization'] ?? 0);
         $accessories          = $body['accessories'] ?? [];
 
+        // Attribute group selections (Panda-style themes use group[N]
+        // selects instead of a resolved id_product_attribute input)
+        $idGroups = [];
+        if (isset($body['groups']) && is_array($body['groups'])) {
+            foreach ($body['groups'] as $idAttribute) {
+                if (is_array($idAttribute)) {
+                    continue;
+                }
+                $idGroups[] = (int) $idAttribute;
+            }
+            $idGroups = array_filter($idGroups);
+        }
+
         // Sanity check on main quantity
         if ($quantity < 1) {
             $quantity = 1;
@@ -112,6 +125,22 @@ class FsaccesoriosCartModuleFrontController extends ModuleFrontController
                 'success' => false,
                 'errors'  => ['The main product is not available'],
             ]));
+        }
+
+        // Resolve the combination from group[N] selections when the theme
+        // does not provide a resolved id_product_attribute (Panda)
+        if ($idProductAttribute <= 0 && !empty($idGroups)) {
+            try {
+                $idProductAttribute = (int) Product::getIdProductAttributeByIdAttributes(
+                    $idProduct,
+                    array_values($idGroups)
+                );
+            } catch (PrestaShopException $e) {
+                $this->ajaxDie(json_encode([
+                    'success' => false,
+                    'errors'  => ['The selected combination is not available'],
+                ]));
+            }
         }
 
         // Validate the selected combination belongs to the main product

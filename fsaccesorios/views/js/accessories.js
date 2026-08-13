@@ -101,6 +101,25 @@
       return input ? (parseInt(input.value, 10) || 0) : 0;
     },
 
+    /**
+     * Panda-style themes expose the selected combination as group[N]
+     * selects/radios instead of a resolved id_product_attribute input.
+     * Collect them so the controller can resolve the combination server-side.
+     */
+    _getMainProductGroups: function () {
+      var groups = {};
+      var m;
+      document.querySelectorAll('select[name^="group["]').forEach(function (el) {
+        m = el.name.match(/^group\[(\d+)\]$/);
+        if (m) { groups[m[1]] = parseInt(el.value, 10) || 0; }
+      });
+      document.querySelectorAll('input[name^="group["]:checked').forEach(function (el) {
+        m = el.name.match(/^group\[(\d+)\]$/);
+        if (m) { groups[m[1]] = parseInt(el.value, 10) || 0; }
+      });
+      return groups;
+    },
+
     _getMainQuantity: function () {
       var input = document.querySelector('input[name="qty"]');
       return input ? parseInt(input.value, 10) : 1;
@@ -174,6 +193,7 @@
       var payload = {
         id_product: mainProductId,
         id_product_attribute: mainProductAttribute,
+        groups: this._getMainProductGroups(),
         quantity: mainQuantity,
         id_customization: 0,
         token: window.fsaccesorios_token || '',

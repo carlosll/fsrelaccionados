@@ -6,6 +6,11 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.14] — 2026-08-13
+
+### Corregido
+- **Combinación del producto principal en temas Panda:** el JS envía ahora las selecciones `group[N]` del formulario y el controlador las resuelve con `Product::getIdProductAttributeByIdAttributes()` (igual que hace el core). Antes, en temas sin `input[name="id_product_attribute"]` (Panda), se añadía al carrito la variante por defecto en vez de la seleccionada.
+
 ## [1.0.13] — 2026-08-13
 
 ### Corregido
