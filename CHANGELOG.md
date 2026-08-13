@@ -6,6 +6,20 @@ El formato sigue [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) y el v
 
 ---
 
+## [1.0.12] — 2026-08-13
+
+### Corregido
+- **Cantidad unificada:** el control de cantidad aparece siempre en la fila principal, también para accesorios con combinaciones. La fila de combinación solo contiene el selector, eliminando el control duplicado.
+- **Nombre truncado en desktop:** se elimina el ellipsis/`nowrap` del nombre en pantallas de escritorio; solo se trunca en móvil/tablet.
+- **Precio y referencia:** eliminado `white-space: nowrap`, ya no fuerzan el ancho de la fila.
+- **Cache busting del CSS:** `accessories.css` se registra con `'version' => $this->version`, de modo que cada actualización del módulo invalida la caché del navegador.
+
+### Mejorado
+- **Layout más compacto:** reducidos paddings, gaps y márgenes del bloque, cabecera e items.
+- **Flex-wrap por defecto:** los items hacen wrap de forma natural en pantallas medias, sin depender solo del breakpoint móvil.
+- **Cantidad alineada a la derecha:** `margin-left: auto` en el control de cantidad.
+- **Selector de combinación:** ocupa el 100% del ancho disponible con un máximo de 16rem.
+
 ## [1.0.11] — 2026-07-24
 
 ### Seguridad
